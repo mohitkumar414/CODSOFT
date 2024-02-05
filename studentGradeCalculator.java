@@ -9,6 +9,11 @@ public class studentGradeCalculator {
         for (int i = 1; i <= noOfSubjects; i++) {
             System.out.println("Enter marks of subject " + i);
             marks = sc.nextInt();
+            if(marks > 100 || marks < 0){
+                System.out.println("INVALID INPUT");
+                i--;
+                continue;
+            }
             totalMarks += marks;
         }
         float totalPercentage = ((float) totalMarks / noOfSubjects);
